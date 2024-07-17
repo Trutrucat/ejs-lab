@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  res.render('home.ejs');
+  res.render('home.ejs', {RESTAURANT});
 });
 
 const RESTAURANT = {
@@ -52,7 +52,7 @@ const RESTAURANT = {
         details: 'Crispy and lightly seasoned string bean fries, served in a pattern for a fun twist.'
       }
     ]
-  }
-  
+  };
 
-app.listen(3000);
+  app.listen(3000);
+  console.log('Server is running on http:/localhost:3000');
