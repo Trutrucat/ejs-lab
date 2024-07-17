@@ -59,6 +59,12 @@ const RESTAURANT = {
   app.get('/', (req, res) => {
     res.render('home.ejs', {RESTAURANT, isOpen: isOpen});
   });
+  app.get('/menu', (req, res) => {
+    res.render('menu.ejs', {RESTAURANT, isOpen, menu: RESTAURANT.menu});
+
+  });
+  
+
 
   app.listen(3000);
   console.log('Server is running on http:/localhost:3000');
