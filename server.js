@@ -1,9 +1,12 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res) => {
-  res.render('home.ejs', {RESTAURANT});
-});
+const openingHour = 11
+const closingHour = 21
+const isOpen = () => {
+  const currentHour = new Date().getHours();
+  return currentHour >= openingHour && currentHour < closingHour;
+};
 
 const RESTAURANT = {
     name: 'The Green Byte Bistro',
@@ -53,6 +56,9 @@ const RESTAURANT = {
       }
     ]
   };
+  app.get('/', (req, res) => {
+    res.render('home.ejs', {RESTAURANT, isOpen: isOpen});
+  });
 
   app.listen(3000);
   console.log('Server is running on http:/localhost:3000');
