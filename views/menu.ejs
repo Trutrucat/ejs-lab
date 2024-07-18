@@ -6,6 +6,7 @@
   <title>Menu - <% RESTAURANT.name %></title>
 </head>
 <body>
+  <%- include('partials/nav') %>
   <h1>Full Menu - <%= RESTAURANT.name %></h1>
   <nav>
     <a href="/">Home</a>
@@ -26,7 +27,7 @@
             <p>Rating: <%= item.rating %> / 5</p>
         </li>
  <%}); %>
- <% include('partials/nav') %>
+ 
  </ul>
 </body>
 </html>

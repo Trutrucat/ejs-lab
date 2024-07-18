@@ -6,7 +6,7 @@
   <title>Menu - <% RESTAURANT.name %></title>
 </head>
 <body> 
-    <% include('partials/nav') %>
+    <%- include('partials/nav') %>
   <h1><%= category %> Menu - <%= RESTAURANT.name %></h1>
   <ul>
     <% menuItems.forEach(item => { %>
